@@ -1,0 +1,52 @@
+;;Configuration settings for application
+title="Altay Geodatabase"
+;default_browse_action=edit
+default_oe=UTF-8
+default_ie=UTF-8
+default_limit=50
+disable_g2=1
+
+[_database]
+host="localhost"
+name="geobase"
+user="geobase"
+password="secret"
+driver=mysqli
+
+[_tables]
+sites = "Sites"
+units = "Units"
+strtypes = "Structural types"
+rocks = "Rocks"
+samples = "Samples"
+strdata = "Structural data"
+photos = "Photos"
+thinsections = "Thinsections"
+tsphotos = "Thinsection photos"
+;users = "Users"
+
+[_auth]
+users_table = users
+username_column = UserName
+password_column = Password
+email_column = Email
+
+[history]
+enabled = 1
+
+[_prefs]
+hide_updated=1
+hide_posted_by=1
+;disable_select_rows=1
+;hide_related_sections=1
+;hide_record_search=1
+hide_record_view_logo=1
+show_record_tree=0
+horizontal_tables_menu=0
+show_bread_crumbs=1
+disable_ajax_record_details=1
+disable_select_rows=0
+
+[_modules]
+;modules_g2=modules/g2/g2.php
+
