@@ -1,0 +1,10 @@
+#xf-logo {
+    background-image: url(images/geobase.png);
+    height:50px;
+    width:170px;
+}
+
+div.horizontalDivider {
+    clear: both;
+    height: 5px;
+}
