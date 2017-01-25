@@ -1,4 +1,12 @@
-#xf-logo {
+h1,h2,h3,h4 {
+    color: #3366CC;
+}
+
+div.resultlist-filters ul li select {
+    width: 100px !important;
+}
+
+xf-logo {
     background-image: url(images/geobase.png);
     height:50px;
     width:170px;
@@ -8,3 +16,49 @@ div.horizontalDivider {
     clear: both;
     height: 5px;
 }
+
+div.portletContent {
+    padding: 0.8em;
+}
+
+span.navItemText {
+    margin-left: -20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+h3.Dataface_collapsible_sidebar {
+    font-size: 12px;
+    padding-top: 0.2em;
+}
+
+div.dataface-sections-top {
+    font-size: 12px;
+    padding: 0 0 0 0.5em;
+}
+
+#status-bar {
+    height: 15px;
+}
+
+div.bread-crumbs {
+    height: 15px;
+}
+
+.resultlist-controller, #details-controller {
+    padding: 4px 1em 0em 1em;
+    height: 24px;
+}
+
+#dataface-sections-left {
+    padding-top: 0px;
+}
+
+#dataface-sections-left .dataface-view-section {
+    padding: 0px;
+}
+
+td.resultListCell--ImageFile {
+    padding: 4px;
+}
+

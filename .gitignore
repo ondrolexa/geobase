@@ -1,2 +1,3 @@
-# ignore files
+# ignore Xataface files
 /files/*
+/templates_c/*

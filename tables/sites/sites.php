@@ -43,7 +43,7 @@ class tables_sites {
 		$myquery = sprintf("SELECT SiteID, 6371*2*ASIN(SQRT(POWER(SIN((%f-abs(sites.Lat))*pi()/180/2),2)+COS(%f*pi()/180)*COS(abs(sites.Lat)*pi()/180)*POWER(SIN((%f-sites.Lon)*pi()/180/2),2))) as distance FROM sites having distance<5 ORDER BY distance limit 15", $record->val('Lat'), $record->val('Lat'), $record->val('Lon'));
 		$res = xf_db_query($myquery, df_db());
 		$row = xf_db_fetch_assoc($res);
-		$table = '<table><tr><th colspan=2>Neighbouring sites</th></tr>';
+		$table = '<table class="details_table"><tr><th colspan=2>Neighbouring sites</th></tr>';
 		while ($row = xf_db_fetch_assoc($res) ){
 			$myrec = df_get_record('sites', array('SiteID'=>$row['SiteID']));
 			$table .= '<tr><td><a href="'.$myrec->getURL().'">'.$myrec->val('Name').'</a></td><td align="right">'.round($row['distance']*1000).' m</td></tr>';
