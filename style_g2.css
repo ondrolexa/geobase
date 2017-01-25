@@ -1,0 +1,65 @@
+#xf-logo {
+    background-image: url(images/geobase.png);
+    height:50px;
+    width:170px;
+}
+
+body {
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+div.resultlist-filters {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#xf-master-detail-n {
+    padding-left: 0px;
+}
+
+#result_list, #relatedList {
+    margin: 5px 0px 5px 0px !important;
+    clear: both;
+}
+
+div.resultlist-filters {
+    font-size: 14px;
+}
+
+div.resultlist-filters ul li select {
+    width: 100px !important;
+    font-size: 13px;
+}
+
+input:not([type="submit"]) {
+    width: 100%;
+}
+
+div.dataface-sections-top {
+    display: none;
+}
+
+div.dataface-sections-left {
+    padding-top: 0px;
+}
+
+.movable {
+    padding: 0 0 0 0;
+}
+
+h3.Dataface_collapsible_sidebar a {
+    margin-right: 10px;
+}
+
+#dataface-sections-left-column .dataface-view-section {
+    padding: 0px;
+}
+
+span.Dataface_GlanceList-item-content > span > span > a {
+    text-decoration: none;
+}
+
+li.Dataface_GlanceList-item {
+    border-bottom: 0px;
+}
