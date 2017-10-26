@@ -50,7 +50,7 @@ class tables_tsphotos {
         	// A new image has just been uploaded, so we resize it.
 			// I like to use the Imagemagick CONVERT command for simplicity.
 			// This section saves a copy of the image as a thumbnail (scaled by the value labeled in the fields.ini file), and then prefixed with a "th_" before it.
-        	$ResizeCommand= "convert " .$imageField['savepath']."/".$record->val('ImageFile')." -resize ".$imageField['thumbsize']."\> ".$imageField['thumbpath']."/".$record->val('ImageFile');
+        	$ResizeCommand= 'convert "'.$imageField['savepath'].'/'.$record->val('ImageFile').'" -resize '.$imageField['thumbsize'].' "'.$imageField['thumbpath'].'/'.$record->val('ImageFile').'"';
             system($ResizeCommand);
         }
 	}
