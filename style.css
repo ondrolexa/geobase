@@ -18,7 +18,7 @@ div.horizontalDivider {
 }
 
 div.portletContent {
-    padding: 0.8em;
+    padding: 0.4em;
 }
 
 span.navItemText {
@@ -61,4 +61,9 @@ div.bread-crumbs {
 td.resultListCell--ImageFile {
     padding: 4px;
 }
-
+#personal-tools {
+    padding: 0px 4px 0px 0px;
+}
+#top-search-form {
+    margin-top: 15px;
+}
