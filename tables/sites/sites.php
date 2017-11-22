@@ -14,7 +14,7 @@ class tables_sites {
 		// first split the CSV file into an array of rows.
 		$rows = explode("\n", $data);
 		// remove last empty row
-		array_pop($rows) 
+		array_pop($rows);
 		foreach ( $rows as $row ){
 		    // We iterate through the rows and parse the name, lon, and lat
 		    // values to that they can be stored in a Dataface_Record object.
