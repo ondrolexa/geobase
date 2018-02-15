@@ -29,7 +29,7 @@ class tables_tsphotos {
     function section__photo(&$record){
         $imageField =& $record->_table->getField('ImageFile');
         return array(
-            'content' => '<img src="'.data_uri($imageField['savepath'].'/'.$record->val('ImageFile')).'" width="50%" /><br/><a href="'.$record->display('ImageFile').'">Click to download original image file</a>',
+            'content' => '<img src="'.$imageField['url'].'/'.$record->val('ImageFile').'" style="height:auto;width:30%;" /><br/><a href="'.$imageField['url'].'/'.$record->val('ImageFile').'">Click to download original image file</a>',
             'class' => 'main',
             'label' => 'Photo',
             'order' => 0
@@ -56,7 +56,7 @@ class tables_tsphotos {
 	}
 	
 	function field__friend_picture(&$record){
-		return '<img src="'.$imageField['savepath'].'/'.$record->val('ImageFile').'" />';
+		return '<img src="'.$imageField['thumbpath'].'/'.$record->val('ImageFile').'" />';
 	}
 	
 	function afterDelete(&$record){
