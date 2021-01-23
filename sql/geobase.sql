@@ -134,8 +134,11 @@ CREATE TABLE `users` (
   `Role` enum('MANAGER','ADMIN','USER','NO ACCESS','READ ONLY','EDIT') NOT NULL DEFAULT 'READ ONLY'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP VIEW IF EXISTS status;
+CREATE VIEW status AS SELECT A.Author, Total_Sites, Filled_Desc, CONCAT(FORMAT(IF(Total_Sites=0,0,(Filled_Desc*100.0)/Total_Sites),2),'%') AS `Sites_OK`, Total_Sites_with_Rocks, Total_Rocks, CONCAT(FORMAT(IF(Total_Sites=0,0,(Total_Sites_with_Rocks*100.0)/Total_Sites),2),'%') AS `Rocks_OK`, Total_Sites_with_Structures, Total_Structures, Total_Sites_with_Photos, Total_Photos, Modified FROM (SELECT IF(sites.Name REGEXP '[[:alpha:]]{2}', LEFT(sites.Name,2), LEFT(sites.Name,1)) as Author, MAX(Modified) as Modified, COUNT(sites.SiteID) AS Total_Sites FROM sites GROUP BY Author) AS A LEFT JOIN (SELECT IF(sites.Name REGEXP '[[:alpha:]]{2}', LEFT(sites.Name,2), LEFT(sites.Name,1)) as Author, COUNT(sites.SiteID) AS Filled_Desc FROM sites WHERE CHAR_LENGTH(sites.Description)>0 GROUP BY Author) AS B on A.Author=B.Author LEFT JOIN (SELECT IF(sites.Name REGEXP '[[:alpha:]]{2}', LEFT(sites.Name,2), LEFT(sites.Name,1)) as Author, COUNT(DISTINCT rocks.SiteID) AS Total_Sites_with_Rocks, COUNT(rocks.RockID) AS Total_Rocks FROM sites JOIN rocks on sites.SiteID = rocks.SiteID GROUP BY Author) AS C on A.Author=C.Author LEFT JOIN (SELECT IF(sites.Name REGEXP '[[:alpha:]]{2}', LEFT(sites.Name,2), LEFT(sites.Name,1)) as Author, COUNT(DISTINCT rocks.SiteID) AS Total_Sites_with_Structures, COUNT(strdata.StrdataID) AS Total_Structures FROM sites JOIN rocks on sites.SiteID = rocks.SiteID JOIN strdata ON rocks.RockID = strdata.RockID GROUP BY Author) AS D on A.Author=D.Author LEFT JOIN (SELECT IF(sites.Name REGEXP '[[:alpha:]]{2}', LEFT(sites.Name,2), LEFT(sites.Name,1)) as Author, COUNT(DISTINCT photos.SiteID) AS Total_Sites_with_Photos, COUNT(photos.PhotoID) AS Total_Photos FROM sites JOIN photos on sites.SiteID = photos.SiteID GROUP BY Author) AS E on A.Author=E.Author;
+
 INSERT INTO `users` (`UserID`, `FullName`, `Email`, `UserName`, `Password`, `Role`) VALUES
-(1, 'Ondrej Lexa', 'admin@email.com', 'admin', 'admin', 'ADMIN');
+(1, 'Administrator', 'admin@email.com', 'admin', 'admin', 'ADMIN');
 
 
 ALTER TABLE `photos`
