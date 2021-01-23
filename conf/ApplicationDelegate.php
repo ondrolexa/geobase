@@ -29,12 +29,17 @@ function imagecreatefromfile( $filename ) {
 }
 
 function data_uri($file) {
-    list($width, $height) = getimagesize($file);
-    $image = imagecreatefromfile($file);
-    $newwidth = 800;
-    $newheight = round($newwidth * $height / $width);
-    $scaled = imagecreatetruecolor($newwidth, $newheight);
-    imagecopyresampled($scaled, $image, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+    if (!file_exists($filename)) {
+        $image = imagecreatefromfile('images/notfound.png');
+        $scaled = imagecreatefromfile('images/notfound.png');
+    } else {
+        list($width, $height) = getimagesize($file);
+        $image = imagecreatefromfile($file);
+        $newwidth = 800;
+        $newheight = round($newwidth * $height / $width);
+        $scaled = imagecreatetruecolor($newwidth, $newheight);
+        imagecopyresampled($scaled, $image, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+    }
     
     // start buffering
     ob_start();
