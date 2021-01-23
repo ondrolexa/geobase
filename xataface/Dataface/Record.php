@@ -4577,6 +4577,9 @@ class Dataface_Record {
 			$filename = $this->strval($fieldname,$index,$where,$sort);
 			if ( strlen($filename) > 0 ){
 				$path = $field['savepath'].'/'.$filename;
+				if (!file_exists($path)) {
+                   $path = 'images/notfound.png';
+                }
 				$mimetype='';
 				//if(!extension_loaded('fileinfo')) {
 				//	@dl('fileinfo.' . PHP_SHLIB_SUFFIX);

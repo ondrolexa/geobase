@@ -29,7 +29,7 @@ function imagecreatefromfile( $filename ) {
 }
 
 function data_uri($file) {
-    if (!file_exists($filename)) {
+    if (!file_exists($file)) {
         $image = imagecreatefromfile('images/notfound.png');
         $scaled = imagecreatefromfile('images/notfound.png');
     } else {
