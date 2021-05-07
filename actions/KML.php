@@ -10,7 +10,7 @@ class actions_KML {
     	
         $app =& Dataface_Application::getInstance();
         $query =& $app->getQuery();
-        $sites =& df_get_selected_records($query);
+        $sites = df_get_selected_records($query);
         foreach ($sites as $s){
             $siteDetail = new KMLPlaceMark('', $s->val('Name'), $s->htmlValue('Description'), true);
             $siteDetail->setGeometry(new KMLPoint($s->val('Lon'), $s->val('Lat'), 0));

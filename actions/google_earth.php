@@ -5,10 +5,10 @@ class actions_google_earth {
     	include_once('kml.class.php');
     	$kml = new KML('GEOBASE');
     	$document = new KMLDocument('geobase', 'GEOBASE');
-    	
+
     	$sitesFolder = new KMLFolder('', 'Sites');
-    	
-        $app =& Dataface_Application::getInstance();
+
+        $app = Dataface_Application::getInstance();
         $query =& $app->getQuery();
         $query['-skip'] = 0;
         $query['-limit'] = 100000;

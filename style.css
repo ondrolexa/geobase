@@ -41,6 +41,182 @@ div.dataface-sections-top {
     height: 15px;
 }
 
+.xf-button-bar-actions {
+	float: left;
+}
+
+.xf-button-bar-actions ul {
+	margin: 0;
+	padding: 0;
+}
+
+.xf-button-bar-actions ul li {
+	float: left;
+	list-style-type: none;
+	list-style-image: none;
+	margin: 0;
+}
+
+.xf-button-bar-actions ul li a {
+	display: block;
+	color: black;
+	border: 1px solid #ccc;
+	text-decoration: none;
+	text-align: center;
+	background-image: url(images/button-bg.png);
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 0px 8px 0px 8px;
+	font-size: 90%;
+	margin-left: 3px;
+	margin-right: 3px;
+	background-color: white;
+	cursor: pointer;
+	
+}
+
+.xf-button-bar-actions ul li a span.arrow {
+	padding-left:20px;
+
+	background: url(images/arrowDown.gif) no-repeat 50% 50%;
+
+}
+
+.xf-button-bar-actions ul li.right-btn a {
+	-webkit-border-top-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	border-top-left-radius: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	margin-right: 3px;
+	margin-left: 0;
+}
+
+.xf-button-bar-actions ul li.middle-btn a {
+	-webkit-border-top-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	border-top-left-radius: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	-webkit-border-top-right-radius: 0px;
+	-moz-border-radius-topright: 0px;
+	border-top-right-radius: 0px;
+	-moz-border-radius-bottomright: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-right: 1px solid transparent;
+	border-left: 1px solid transparent;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.xf-button-bar-actions ul li.left-btn a {
+	-webkit-border-top-right-radius: 0px;
+	-moz-border-radius-topright: 0px;
+	border-top-right-radius: 0px;
+	-moz-border-radius-bottomright: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	margin-left: 3px;
+	margin-right: 0;
+}
+
+
+#left_column {
+	width: 175px;
+}
+.xf-button-bar-actions ul li a:hover {
+	border: 1px solid #666;
+}
+
+.xf-button-bar-actions ul li a img {
+	display: none;
+}
+
+.xf-button-bar-actions ul li ul {
+	display:none;
+	top: 1.7em !important;
+	padding:0;
+	width: auto;
+}
+
+.xf-button-bar-actions ul li ul li {
+	background-color: #f4f4f4;
+	float: none !important;
+	padding:0;
+	width: auto;
+	
+}
+
+.xf-button-bar-actions ul li ul li a {
+	background-image: none;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	background-color: transparent;
+	border: none;
+	padding: 3px 10px 3px 10px;
+	display: block;
+	border: none;
+	text-align: left;
+	margin:0;
+	width: auto;
+	font-size: 90%;
+}
+
+.xf-button-bar-actions ul li ul li a:hover {
+	border: none;
+}
+
+.ui-tabs {
+	position: relative;/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: a
+uto appear as "fixed") */
+	padding: .2em;
+}
+.ui-tabs .ui-tabs-nav {
+	margin: 0;
+	padding: .2em .2em 0;
+}
+.ui-tabs .ui-tabs-nav li {
+	list-style: none;
+	float: left;
+	position: relative;
+	top: 0;
+	margin: 1px .2em 0 0;
+	border-bottom-width: 0;
+	padding: 0;
+	white-space: nowrap;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+	float: left;
+	padding: .2em 0.5em;
+	text-decoration: none;
+	font-size: larger;
+    font-weight: bolder;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+	margin-bottom: -1px;
+	padding-bottom: 1px;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
+	cursor: text;
+}
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+	cursor: pointer;
+}
+.ui-tabs .ui-tabs-panel {
+	display: block;
+	border-width: 0;
+	padding: 1em 1.4em;
+	background: none;
+}
+
+
 div.bread-crumbs {
     height: 15px;
 }
