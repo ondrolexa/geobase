@@ -55,8 +55,12 @@ class tables_photos {
 	
 	function afterDelete(&$record){
 		$imageField =& $record->_table->getField('ImageFile');
-		unlink($imageField['savepath']."/".$record->val('ImageFile'));
-		unlink($imageField['thumbpath']."/".$record->val('ImageFile'));
+		if(file_exists($imageField['savepath']."/".$record->val('ImageFile'))){
+		    unlink($imageField['savepath']."/".$record->val('ImageFile'));
+		}
+		if(file_exists($imageField['thumbpath']."/".$record->val('ImageFile'))){
+		    unlink($imageField['thumbpath']."/".$record->val('ImageFile'));
+		}
     }
 }
 ?>
