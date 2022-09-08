@@ -40,6 +40,41 @@ class tables_sites {
 		// Now we return the array of records to be imported.
 		return $records;
 	}
+
+	function __import__geojson($data, $defaultValues=array()){
+		// build an array of Dataface_Record objects that are to be inserted based
+		// on the GEOJSON file data.
+		$records = array();
+
+		$decoded_json = json_decode($data, true);
+ 		$features = $decoded_json['features'];
+		foreach($features as $feature) {
+		    // We iterate through the features and parse the name, lon, and lat
+		    $prop = $feature['properties'];
+            $geom = $feature['geometry'];
+		    // values to that they can be stored in a Dataface_Record object.
+		    $record = new Dataface_Record('sites', array());
+
+		    // We insert the default values for the record.
+		    $record->setValues($defaultValues);
+
+		    // Now we add the values from the CSV file.
+		    $record->setValues(
+		        array(
+		            'Name'=>$prop['Name'],
+		            'Lon'=>$geom['coordinates'][0],
+		            'Lat'=>$geom['coordinates'][1]
+		             )
+		        );
+
+		    // Now add the record to the output array.
+		    $records[] = $record;
+		}
+
+		// Now we return the array of records to be imported.
+		return $records;
+	}
+
 	function section__map(&$record){
 		$map = '<img src="http://maps.googleapis.com/maps/api/staticmap?&zoom=12&size=400x250&maptype=satellite&markers=size:tiny|color:green';
 		$myquery = sprintf("SELECT SiteID, 6371*2*ASIN(SQRT(POWER(SIN((%f-abs(sites.Lat))*pi()/180/2),2)+COS(%f*pi()/180)*COS(abs(sites.Lat)*pi()/180)*POWER(SIN((%f-sites.Lon)*pi()/180/2),2))) as distance FROM sites having distance<5 ORDER BY distance limit 15", $record->val('Lat'), $record->val('Lat'), $record->val('Lon'));
