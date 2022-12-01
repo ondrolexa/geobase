@@ -5,7 +5,7 @@ class tables_thinsections {
         $sparent = df_get_record('samples', array('SampleID'=>$skey));
         $rparent = df_get_record('rocks', array('RockID'=>$sparent->getValue('RockID')));
         $typ = $record->val('Type');
-        if(is_null($typ))
+        if( !isset($typ) )
         {
             return $rparent->getTitle().' '.$record->val('Sample');
         }
