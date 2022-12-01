@@ -91,7 +91,7 @@ DROP TABLE IF EXISTS `thinsections`;
 CREATE TABLE `thinsections` (
   `ThinsectionID` int(10) UNSIGNED NOT NULL,
   `SampleID` int(10) UNSIGNED NOT NULL,
-  `Type` varchar(12) NOT NULL DEFAULT '',
+  `Type` varchar(12) DEFAULT NULL,
   `Adjective` varchar(255) DEFAULT NULL,
   `Grainsize` varchar(255) DEFAULT NULL,
   `Texture` varchar(255) DEFAULT NULL,
