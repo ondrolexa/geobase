@@ -11,7 +11,7 @@ class tables_thinsections {
         }
         else
         {
-            return $rparent->getTitle().' '.$record->val('Sample').'-'.$record->val('Type');
+            return $rparent->getTitle().' '.$record->val('Sample').' ('.$typ.')';
         }
     }
 
